@@ -69,6 +69,14 @@ describe('fire', function() {
     };
   });
 
+  after(function() {
+    console.log('Entire test suite completed');
+  });
+
+  afterEach(function() {
+    console.log('One unit test completed');
+  });
+
   it('should record damage on the given players ship at a given coordinate', function() {
     fire(player, [0, 0]);
     expect(player.ships[0].damage[0]).to.deep.equal([0, 0]);
